@@ -1,18 +1,20 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "-*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*";
+static const char font[]            = "-*-terminus-medium-r-*-*-8-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#3F3F3F";
-static const char normbgcolor[]     = "#3F3F3F";
+//static const char normbgcolor[]     = "#3F3F3F";
+static const char normbgcolor[]     = "#000000";
 static const char normfgcolor[]     = "#DCDCCC";
 static const char selbordercolor[]  = "#3F3F3F";
-static const char selbgcolor[]      = "#333333";
+static const char selbgcolor[]      = "#000000";
+//static const char selbgcolor[]      = "#333333";
 static const char selfgcolor[]      = "#DCDCCC";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const Bool showsystray		= True;		/* False means no systray */
-static const Bool showbar           = True;     /* False means no bar */
+static const Bool showbar           = False;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
@@ -51,13 +53,15 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "terminator", NULL };
 static const char *browsercmd[]  = { "chromium", NULL };
-static const char *musiccmd[] = { "lxmusic" };
+//static const char *musiccmd[] = { "lxmusic" };
+static const char *sublcmd[] = { "sublime", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = browsercmd } },
+	{ MODKEY,                       XK_z,      spawn,          {.v = sublcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -65,7 +69,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,						XK_x,      spawn,          { .v = musiccmd } },
+//	{ MODKEY,						XK_x,      spawn,          { .v = musiccmd } },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
@@ -86,6 +90,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_4,                      3)
 	TAGKEYS(                        XK_5,                      4)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	//TODO change the mapping ;qjkx wvz
 };
 
 /* button definitions */
