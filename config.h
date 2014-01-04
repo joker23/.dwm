@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "-*-terminus-medium-r-*-*-8-*-*-*-*-*-*-*";
+static const char font[]            = "-*-terminus-medium-*-*-*-8-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#3F3F3F";
 //static const char normbgcolor[]     = "#3F3F3F";
 static const char normbgcolor[]     = "#000000";
@@ -9,20 +9,22 @@ static const char normfgcolor[]     = "#DCDCCC";
 static const char selbordercolor[]  = "#3F3F3F";
 static const char selbgcolor[]      = "#000000";
 //static const char selbgcolor[]      = "#333333";
-static const char selfgcolor[]      = "#DCDCCC";
+static const char selfgcolor[]      = "#00DC00";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const Bool showsystray		= True;		/* False means no systray */
-static const Bool showbar           = False;     /* False means no bar */
+static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "[", "D", "U", "G", "]" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
+/**
+ * this is mianly used as an example just in case I want to use it in the future
+ */
 static const Rule rules[] = {
 	/* class      		instance    title       tags mask     isfloating   monitor */
-	{ "terminator",     NULL,       NULL,       0,            False,        -1 },
 	{ "Chromium",  		NULL,       NULL,       1 << 1,       False,       -1 },
 };
 
@@ -51,10 +53,11 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "terminator", NULL };
+static const char *termcmd[]  = { "xterm", "-fg", "white", "-bg", "black", NULL };
 static const char *browsercmd[]  = { "chromium", NULL };
-//static const char *musiccmd[] = { "lxmusic" };
 static const char *sublcmd[] = { "sublime", NULL };
+static const char *pdfcmd[] = { "evince", NULL };
+static const char *lockcmd[]  = { "slock", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -62,6 +65,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_z,      spawn,          {.v = sublcmd } },
+	{ MODKEY,                       XK_s,      spawn,          {.v = pdfcmd } },
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -69,7 +74,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-//	{ MODKEY,						XK_x,      spawn,          { .v = musiccmd } },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
@@ -89,6 +93,10 @@ static Key keys[] = {
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
 	TAGKEYS(                        XK_5,                      4)
+	TAGKEYS(                        XK_6,                      5)
+	TAGKEYS(                        XK_7,                      6)
+	TAGKEYS(                        XK_8,                      7)
+	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	//TODO change the mapping ;qjkx wvz
 };
@@ -109,4 +117,5 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
+
 

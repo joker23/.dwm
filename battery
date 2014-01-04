@@ -1,0 +1,4 @@
+#!/usr/bin/perl
+$str = <STDIN>;
+@sp = split(/[ ]/, $str);
+print "[@sp[3] @sp[4]]";
