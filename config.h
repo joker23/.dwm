@@ -25,7 +25,7 @@ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
  */
 static const Rule rules[] = {
 	/* class      		instance    title       tags mask     isfloating   monitor */
-	{ "Chromium",  		NULL,       NULL,       1 << 1,       False,       -1 },
+	{ "Chromium",  		NULL,       NULL,       1 << 7,       False,       -1 },
 };
 
 /* layout(s) */
@@ -95,7 +95,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_5,                      4)
 	TAGKEYS(                        XK_6,                      5)
 	TAGKEYS(                        XK_7,                      6)
-	TAGKEYS(                        XK_8,                      7)
+	TAGKEYS(                        XK_semicolon,              7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	//TODO change the mapping ;qjkx wvz
