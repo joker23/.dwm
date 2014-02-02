@@ -72,7 +72,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_h,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_g,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_u,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_comma,  setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_period, setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
@@ -86,9 +86,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_q,  	   focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_w,      focusmon,       {.i = +1 } },
+	{ MODKEY,                       XK_e,      focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_q,      tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_w,      tagmon,         {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_e,      tagmon,         {.i = +1 } },
 	
 	//Change Desktops
 	TAGKEYS(           	XK_a,       				0)
