@@ -60,42 +60,48 @@ static const char *pdfcmd[] = { "evince", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
 
 static Key keys[] = {
-	/* modifier                     key        function        argument */
+	/* modifier			key			    function	argument*/
+	//Command Macros
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = browsercmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+
+	//DWM stufff
+	{ MODKEY|ShiftMask,             XK_space,  togglebar,      {0} },
+	{ MODKEY,                       XK_h,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_g,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY,                       XK_comma,  setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_period, setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_z,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,                       XK_x,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_c,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_r,      setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_r,      togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	TAGKEYS(                        XK_1,                      0)
-	TAGKEYS(                        XK_2,                      1)
-	TAGKEYS(                        XK_3,                      2)
-	TAGKEYS(                        XK_4,                      3)
-	TAGKEYS(                        XK_5,                      4)
-	TAGKEYS(                        XK_6,                      5)
-	TAGKEYS(                        XK_7,                      6)
-	TAGKEYS(                        XK_semicolon,              7)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY,                       XK_q,  	   focusmon,       {.i = -1 } },
+	{ MODKEY,                       XK_w,      focusmon,       {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_q,      tagmon,         {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_w,      tagmon,         {.i = +1 } },
+	
+	//Change Desktops
+	TAGKEYS(           	XK_a,       				0)
+	TAGKEYS(            XK_s,                     	1)
+	TAGKEYS(           	XK_d,                       2)
+	TAGKEYS(            XK_f,                      	3)
+	TAGKEYS(            XK_j,                      	4)
+	TAGKEYS(           	XK_k,                      	5)
+	TAGKEYS(           	XK_l,                      	6)
+	TAGKEYS(           	XK_semicolon,              	7)
+	//{ MODKEY|ShiftMask, XK_q,      		quit,      	{0} },
 	//TODO change the mapping ;qjkx wvz
+
 };
 
 /* button definitions */
