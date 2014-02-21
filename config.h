@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "-*-terminus-medium-*-*-*-8-*-*-*-*-*-*-*";
+static const char font[]            = "-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#3F3F3F";
 //static const char normbgcolor[]     = "#3F3F3F";
 static const char normbgcolor[]     = "#000000";
@@ -53,7 +53,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "xterm", "-fg", "white", "-bg", "black", NULL };
+//static const char *termcmd[]  = { "xterm", "-fg", "white", "-bg", "black", NULL };
+static const char *termcmd[]  = { "urxvt", NULL };
 static const char *browsercmd[]  = { "chromium", NULL };
 // static const char *sublcmd[] = { "sublime", NULL };
 // static const char *pdfcmd[] = { "evince", NULL };
@@ -99,7 +100,7 @@ static Key keys[] = {
 	TAGKEYS(           	XK_k,                      	5)
 	TAGKEYS(           	XK_l,                      	6)
 	TAGKEYS(           	XK_semicolon,              	7)
-	//{ MODKEY|ShiftMask, XK_q,      		quit,      	{0} },
+	{ MODKEY|ShiftMask, XK_q,      		quit,      	{0} },
 	//TODO change the mapping ;qjkx wvz
 
 };
