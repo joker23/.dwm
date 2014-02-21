@@ -55,8 +55,8 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "xterm", "-fg", "white", "-bg", "black", NULL };
 static const char *browsercmd[]  = { "chromium", NULL };
-static const char *sublcmd[] = { "sublime", NULL };
-static const char *pdfcmd[] = { "evince", NULL };
+// static const char *sublcmd[] = { "sublime", NULL };
+// static const char *pdfcmd[] = { "evince", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
 
 static Key keys[] = {
