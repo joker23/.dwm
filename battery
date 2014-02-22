@@ -1,4 +1,8 @@
 #!/usr/bin/perl
 $str = <STDIN>;
 @sp = split(/[ ]/, $str);
-print "[@sp[3] @sp[4]]";
+if(@sp[2] eq "Discharging,"){
+	print "[@sp[3] @sp[4]]";
+} else {
+	print( "[@sp[3] Charging]");
+}
