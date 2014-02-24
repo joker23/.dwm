@@ -18,7 +18,7 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "+", "+", "+", "+", "+", "+", "+", "+" };
+static const char *tags[] = { "", "", "", "", "", "", "", "" };
 
 /**
  * this is mianly used as an example just in case I want to use it in the future

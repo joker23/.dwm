@@ -809,10 +809,11 @@ drawsquare(Bool filled, Bool empty, Bool invert, unsigned long col[ColLast]) {
 
 	XSetForeground(dpy, dc.gc, col[invert ? ColBG : ColFG]);
 	x = (dc.font.ascent + dc.font.descent + 2) / 4;
-	if(filled)
-		XFillRectangle(dpy, dc.drawable, dc.gc, dc.x+1, dc.y+1, x+1, x+1);
+	if(filled) {
+		XFillRectangle(dpy, dc.drawable, dc.gc, dc.x+1, dc.y+1, x+8, x+7);
+	}
 	else if(empty)
-		XDrawRectangle(dpy, dc.drawable, dc.gc, dc.x+1, dc.y+1, x, x);
+		XDrawRectangle(dpy, dc.drawable, dc.gc, dc.x+1, dc.y+1, x+7, x+6);
 }
 
 void
