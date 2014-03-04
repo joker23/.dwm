@@ -90,7 +90,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_e,      focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_q,      tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_e,      tagmon,         {.i = +1 } },
-	
+
 	//Change Desktops
 	TAGKEYS(           	XK_a,       				0)
 	TAGKEYS(            XK_s,                     	1)
@@ -116,10 +116,10 @@ static Button buttons[] = {
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
-	{ ClkTagBar,            0,              Button1,        view,           {0} },
-	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
-	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
-	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+//	{ ClkTagBar,            0,              Button1,        view,           {0} },
+//	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
+//	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
+//	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
 
 
