@@ -1,5 +1,6 @@
 #!/bin/sh
-COMMAND='echo $(acpi)|~/.dwm/battery ; echo  [$(date +%A,%t%B%t%d%t%R)]'
+COMMAND='echo [$(./battery)][$(date +%A,%t%B%t%d%t%R)]'
+
 xsetroot -name "$(eval $COMMAND)"
 while [ $(date +%S) -ne 0 ]
 do

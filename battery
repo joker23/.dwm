@@ -1,8 +1,2 @@
-#!/usr/bin/perl
-$str = <STDIN>;
-@sp = split(/[ ]/, $str);
-if(@sp[2] eq "Discharging,"){
-	print "[@sp[3] @sp[4]]";
-} else {
-	print( "[@sp[3] Charging]");
-}
+#!/bin/bash
+acpi -b |awk -F ": " '{print $2}'| awk -F "," '{print substr($1,1,1) $2}'

@@ -18,7 +18,7 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "", "", "", ""};
 
 /**
  * this is mianly used as an example just in case I want to use it in the future
@@ -53,12 +53,14 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-//static const char *termcmd[]  = { "xterm", "-fg", "white", "-bg", "black", NULL };
-static const char *termcmd[]  = { "urxvt", NULL };
-static const char *browsercmd[]  = { "chromium", NULL };
-// static const char *sublcmd[] = { "sublime", NULL };
-// static const char *pdfcmd[] = { "evince", NULL };
-static const char *lockcmd[]  = { "slock", NULL };
+//static const char *termcmd[]  	= { "xterm", "-fg", "white", "-bg", "black", NULL };
+static const char *termcmd[]  		= { "urxvt", NULL };
+static const char *browsercmd[]  	= { "google-chrome", NULL };
+// static const char *sublcmd[] 	= { "sublime", NULL };
+// static const char *pdfcmd[] 		= { "evince", NULL };
+static const char *lockcmd[]  		= { "slock", NULL };
+static const char *voldown[] 		= { "amixer", "-q", "sset", "Master", "1%+" };
+static const char *volup[]			= { "amixer", "-q", "sset", "Master", "1%-" };
 
 static Key keys[] = {
 	/* modifier			key			    function	argument*/
@@ -67,6 +69,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = browsercmd } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = lockcmd } },
+	{ MODKEY,			            XK_j,      spawn,          {.v = voldown } },
+	{ MODKEY,             			XK_k,      spawn,          {.v = volup } },
 
 	//DWM stufff
 	{ MODKEY|ShiftMask,             XK_space,  togglebar,      {0} },
@@ -96,10 +100,6 @@ static Key keys[] = {
 	TAGKEYS(            XK_s,                     	1)
 	TAGKEYS(           	XK_d,                       2)
 	TAGKEYS(            XK_f,                      	3)
-	TAGKEYS(            XK_j,                      	4)
-	TAGKEYS(           	XK_k,                      	5)
-	TAGKEYS(           	XK_l,                      	6)
-	TAGKEYS(           	XK_semicolon,              	7)
 	{ MODKEY|ShiftMask, XK_q,      		quit,      	{0} },
 	//TODO change the mapping ;qjkx wvz
 
